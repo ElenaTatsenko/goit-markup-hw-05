@@ -110,16 +110,19 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 .social-list-icon {
   fill: var(--icon-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-link:hover .social-list-icon,
 .social-list-link:focus .social-list-icon {
   fill: var(--complementary-color);
-  /*background-color: var(--accent-color);*/
+  
 }
 .social-list-link:hover,
 .social-list-link:focus {
@@ -164,11 +167,13 @@ img {
 }
 
 .nav-list-link {
+  position: relative;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-list-link:hover,
 .nav-list-link:focus {
@@ -194,6 +199,7 @@ img {
   color: var(--secondary-color);
   display: flex;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-list-link:hover,
 .contact-list-link:focus {
@@ -258,6 +264,9 @@ img {
   color: var(--complementary-color);
   cursor: pointer;
   background-color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .modal-btn:hover,
 .modal-btn:focus {
@@ -311,17 +320,45 @@ img {
   margin-top: -30px;
 }
 .what-we-do-item {
+
   margin-left: 30px;
   margin-top: 30px;
+  
+}
+.test {
+  position: relative;
 }
 .what-we-do-title {
   margin-bottom: 50px;
   text-align: center;
+
 }
 .what-we-do {
   padding-bottom: 0 px;
   padding-top: 0;
 }
+.what-we-do-subtitle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background-color: rgba(47, 48, 58, 0.8);
+  color: var(--complementary-color);
+}
+.what-we-do-subtitle-wrapper {
+  position: relative;
+}
+
+
+  
 
 /*Конец чем мы занимаемся*/
 
@@ -387,7 +424,10 @@ img {
   padding: 16px 32px;
   fill: var(--icon-color);
   border: 1px solid var(--icon-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .clients-link:hover .client-logo,
 .clients-link:focus .client-logo {
@@ -419,6 +459,10 @@ img {
   color: var(--main-color);
   background-color: var(--light-theme-background);
   border: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-btn:hover,
 .filter-btn:focus {
@@ -450,11 +494,12 @@ img {
 
 .portfolio-content-wrapper {
   padding: 20px 24px;
-  border: 1px solid#EEEEEE;
+  border: 1px solid #EEEEEE;
 }
 .portfolio-link {
   display: block;
   position: relative;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -497,6 +542,7 @@ img {
   letter-spacing: 0.03em;
   color: var(--adress-link-color);
   font-style: normal;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-link:hover,
@@ -522,6 +568,7 @@ img {
 }
 .footer-social-list-link {
   background-color: rgba(255, 255, 255, 0.1);
+
 }
 .footer-social-list-icon {
   fill: var(--complementary-color);
@@ -556,4 +603,56 @@ img {
 .portfolio-link:hover .overlay,
 .portfolio-link:focus .overlay {
   transform: translateY(0%);
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), 
+  visibility 500ms cubic-bezier(0.4, 0, 0.2, 1),
+  transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: #ffffff;
+}
+.modal-close-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.2);
+  
+}
+.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -32px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
